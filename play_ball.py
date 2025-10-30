@@ -18,8 +18,9 @@ def playball_sim(data_seasons, team_lineup, batter):
     batter_number = team_lineup.index(batter)
 
     """
-    aPOSlist = [1, 0, 0]  # man on first (no outs)
-    aPOSlist = [0, 1, 0]  # man on second (one out: after sac bunt)
+    aPOSlist = [1, 0, 0]  # man on first
+    aPOSlist = [0, 1, 0]  # man on second
+    aPOSlist = [0, 0, 1]  # man on second
     """
     inning_df = pd.DataFrame()
     for i in range(2):
@@ -43,8 +44,8 @@ def playball_sim(data_seasons, team_lineup, batter):
 
         runs = 0
         multi_runs = 0
-        for i in range(15000):
-            # simulate 15000 innings
+        for i in range(20000):
+            # simulate 20000 innings
             ## total times a run is scored
 
             inning_rslt = inning(
@@ -65,8 +66,8 @@ def playball_sim(data_seasons, team_lineup, batter):
                 data={
                     "Play Type": ["Swing Away"],
                     "Inning Setup": [f"Runner on {runner} w/ 0 Out"],
-                    "Run %": [runs / 15000],
-                    "Multi Run %": [multi_runs / 15000],
+                    "Run %": [runs / 20000],
+                    "Multi Run %": [multi_runs / 20000],
                 }
             )
         else:
@@ -77,8 +78,8 @@ def playball_sim(data_seasons, team_lineup, batter):
                         data={
                             "Play Type": ["Sac Bunt"],
                             "Inning Setup": [f"Runner on {runner} w/ 1 Out"],
-                            "Run %": [runs / 15000],
-                            "Multi Run %": [multi_runs / 15000],
+                            "Run %": [runs / 20000],
+                            "Multi Run %": [multi_runs / 20000],
                         }
                     ),
                 ]
@@ -89,7 +90,8 @@ def playball_sim(data_seasons, team_lineup, batter):
 
 ######################################################
 
-# NLDS Game 1
+## NLDS Game 2, Bottom of 9th
+## LA Dodgers vs. PHI Phillies
 gm_scenario = playball_sim(
     data_seasons=[2024, 2025],
     team_lineup=[
@@ -105,3 +107,4 @@ gm_scenario = playball_sim(
     ],
     batter="Bryson Stott",
 )
+
