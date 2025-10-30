@@ -11,9 +11,9 @@ or <br>
 
 | Play Type | Scenario Setup | Run % | Multi Run % |
 | :-------: | :------: | :-------: | :-------: |
-| Swing Away     | Runner on 2nd w/ 0 Out | 32%    | 18%    |
-| Sac Bunt   | Runner on 3rd w/ 1 Out   | 30%   | 11%   |
+| Swing Away     | Runner on 2nd w/ 0 Out | 31%    | 18%    |
+| Sac Bunt   | Runner on 3rd w/ 1 Out   | 30%   | 12%   |
 
-Taking these percentages into account the Phillies could ultimately choose either option if their goal was to just tie the game in the inning at hand as the scoring percentage for just a single run is ever so slightly different (from 32% to 30%). But if the Phillies were wanting to play for the win in the moment I would have their multiple run probability being higher by allowing Stott to swing away and let the inning play out without a sacrifice bunt.
+Taking these percentages into account the Phillies could ultimately choose either option if their goal was to just tie the game in the inning at hand as the scoring percentage for just a single run is ever so slightly different (from 31% to 30%). But if the Phillies were wanting to play for the win in the moment I would have their multiple run probability being higher by allowing Stott to swing away and let the inning play out without a sacrifice bunt.
 
 As the game actually played out we saw the Phillies elect to have Stott attempt a sac bunt and that bunt consequentially played in to the Dodgers executing a perfect wheel route and getting Castellanos at 3rd. The inning would finish out with the Phillies failing to score the tying run and ultimately losing the game, leaving the viewer (and arm chair coaches everywhere wondering: What would have happened if the Phillies would have let Stott swing away?). 
