@@ -20,7 +20,7 @@ def playball_sim(data_seasons, team_lineup, batter):
     """
     aPOSlist = [1, 0, 0]  # man on first
     aPOSlist = [0, 1, 0]  # man on second
-    aPOSlist = [0, 0, 1]  # man on second
+    aPOSlist = [0, 0, 1]
     """
     inning_df = pd.DataFrame()
     for i in range(2):
@@ -30,10 +30,10 @@ def playball_sim(data_seasons, team_lineup, batter):
         """
         if i == 0:
             outs = 0
-            baserunners = [1, 0, 0]
+            baserunners = [0, 1, 0]
         elif i == 1:
             outs = 1
-            baserunners = [0, 1, 0]
+            baserunners = [0, 0, 1]
 
         if baserunners[0] == 1:
             runner = "1st"
@@ -44,17 +44,28 @@ def playball_sim(data_seasons, team_lineup, batter):
 
         runs = 0
         multi_runs = 0
-        for i in range(20000):
+        for j in range(20000):
             # simulate 20000 innings
             ## total times a run is scored
 
-            inning_rslt = inning(
-                bat_lineup=gm_lineup[:9],
-                opp_field=opp_fielding,
-                batter=batter_number,
-                o=outs,
-                aPOSlist=baserunners,
-            )
+            if i == 0:
+                # swing away
+                inning_rslt = inning(
+                    bat_lineup=gm_lineup[:9],
+                    opp_field=opp_fielding,
+                    batter=batter_number,
+                    o=outs,
+                    aPOSlist=baserunners,
+                )
+            elif i == 1:
+                # sacrifice (so advance batter)
+                inning_rslt = inning(
+                    bat_lineup=gm_lineup[:9],
+                    opp_field=opp_fielding,
+                    batter=batter_number+1,
+                    o=outs,
+                    aPOSlist=baserunners,
+                )
 
             if inning_rslt[0] > 0:
                 runs += 1
@@ -107,4 +118,5 @@ gm_scenario = playball_sim(
     ],
     batter="Bryson Stott",
 )
+
 
